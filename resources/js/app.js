@@ -12,8 +12,5 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./bootstrap');
-
- // Register React components
-// require('./components/User');
+// React Components
 require('./components/Frontpage');

@@ -29252,15 +29252,11 @@
   .slant {
     position: relative;
   }
-  .slant:before {
-    content: " ";
-    position: absolute;
-    width: 100%;
-    top: 15%;
-    bottom: 15%;
-    background: #f1f3f5;
-    z-index: -1;
-  }
+
+  
+  section.wysiwyg.image.about {margin: 90px 0  0;}
+
+
   .purple,
   .purple > .container,
   .slant:before {
@@ -31575,7 +31571,7 @@
     background-size: cover;
     background-position: 50%;
     background-color: transparent;
-    padding:30px 0;
+    padding: 0;
     h2{
       text-transform: capitalize;
       letter-spacing: -0.04em;
