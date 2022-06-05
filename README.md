@@ -1,6 +1,5 @@
 ## About Laravel / React Main Site
-
+CRUD App with React and Laravel
 ## Resume
 
-Resume goes here t
-
+Los Angeles Based Developer
