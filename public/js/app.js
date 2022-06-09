@@ -6242,76 +6242,749 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
 
 
-function Navbar() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("header", {
-      className: "block",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "container headercontainer",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "logoblock",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-            "aria-current": "page",
-            className: "",
-            href: "/",
+
+var Navbar = /*#__PURE__*/function (_React$Component) {
+  _inherits(Navbar, _React$Component);
+
+  var _super = _createSuper(Navbar);
+
+  function Navbar(props) {
+    var _this;
+
+    _classCallCheck(this, Navbar);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      error: null,
+      isLoaded: false,
+      items: [{
+        "data": {
+          "timelines": [{
+            "timestep": "1h",
+            "endTime": "2022-06-13T17:00:00Z",
+            "startTime": "2022-06-09T05:00:00Z",
+            "intervals": [{
+              "startTime": "2022-06-09T05:00:00Z",
+              "values": {
+                "temperature": -47.79
+              }
+            }, {
+              "startTime": "2022-06-09T06:00:00Z",
+              "values": {
+                "temperature": -47.22
+              }
+            }, {
+              "startTime": "2022-06-09T07:00:00Z",
+              "values": {
+                "temperature": -46.99
+              }
+            }, {
+              "startTime": "2022-06-09T08:00:00Z",
+              "values": {
+                "temperature": -46.61
+              }
+            }, {
+              "startTime": "2022-06-09T09:00:00Z",
+              "values": {
+                "temperature": -46.38
+              }
+            }, {
+              "startTime": "2022-06-09T10:00:00Z",
+              "values": {
+                "temperature": -46.03
+              }
+            }, {
+              "startTime": "2022-06-09T11:00:00Z",
+              "values": {
+                "temperature": -46.04
+              }
+            }, {
+              "startTime": "2022-06-09T12:00:00Z",
+              "values": {
+                "temperature": -45.87
+              }
+            }, {
+              "startTime": "2022-06-09T13:00:00Z",
+              "values": {
+                "temperature": -45.77
+              }
+            }, {
+              "startTime": "2022-06-09T14:00:00Z",
+              "values": {
+                "temperature": -45.33
+              }
+            }, {
+              "startTime": "2022-06-09T15:00:00Z",
+              "values": {
+                "temperature": -45.18
+              }
+            }, {
+              "startTime": "2022-06-09T16:00:00Z",
+              "values": {
+                "temperature": -45.69
+              }
+            }, {
+              "startTime": "2022-06-09T17:00:00Z",
+              "values": {
+                "temperature": -45.33
+              }
+            }, {
+              "startTime": "2022-06-09T18:00:00Z",
+              "values": {
+                "temperature": -44.86
+              }
+            }, {
+              "startTime": "2022-06-09T19:00:00Z",
+              "values": {
+                "temperature": -44.58
+              }
+            }, {
+              "startTime": "2022-06-09T20:00:00Z",
+              "values": {
+                "temperature": -44.16
+              }
+            }, {
+              "startTime": "2022-06-09T21:00:00Z",
+              "values": {
+                "temperature": -43.52
+              }
+            }, {
+              "startTime": "2022-06-09T22:00:00Z",
+              "values": {
+                "temperature": -42.76
+              }
+            }, {
+              "startTime": "2022-06-09T23:00:00Z",
+              "values": {
+                "temperature": -42.29
+              }
+            }, {
+              "startTime": "2022-06-10T00:00:00Z",
+              "values": {
+                "temperature": -41.55
+              }
+            }, {
+              "startTime": "2022-06-10T01:00:00Z",
+              "values": {
+                "temperature": -41.38
+              }
+            }, {
+              "startTime": "2022-06-10T02:00:00Z",
+              "values": {
+                "temperature": -41.36
+              }
+            }, {
+              "startTime": "2022-06-10T03:00:00Z",
+              "values": {
+                "temperature": -41.7
+              }
+            }, {
+              "startTime": "2022-06-10T04:00:00Z",
+              "values": {
+                "temperature": -41.92
+              }
+            }, {
+              "startTime": "2022-06-10T05:00:00Z",
+              "values": {
+                "temperature": -41.53
+              }
+            }, {
+              "startTime": "2022-06-10T06:00:00Z",
+              "values": {
+                "temperature": -41.14
+              }
+            }, {
+              "startTime": "2022-06-10T07:00:00Z",
+              "values": {
+                "temperature": -40.23
+              }
+            }, {
+              "startTime": "2022-06-10T08:00:00Z",
+              "values": {
+                "temperature": -39.97
+              }
+            }, {
+              "startTime": "2022-06-10T09:00:00Z",
+              "values": {
+                "temperature": -39.59
+              }
+            }, {
+              "startTime": "2022-06-10T10:00:00Z",
+              "values": {
+                "temperature": -40.17
+              }
+            }, {
+              "startTime": "2022-06-10T11:00:00Z",
+              "values": {
+                "temperature": -39.88
+              }
+            }, {
+              "startTime": "2022-06-10T12:00:00Z",
+              "values": {
+                "temperature": -39.92
+              }
+            }, {
+              "startTime": "2022-06-10T13:00:00Z",
+              "values": {
+                "temperature": -39.79
+              }
+            }, {
+              "startTime": "2022-06-10T14:00:00Z",
+              "values": {
+                "temperature": -40.48
+              }
+            }, {
+              "startTime": "2022-06-10T15:00:00Z",
+              "values": {
+                "temperature": -40.8
+              }
+            }, {
+              "startTime": "2022-06-10T16:00:00Z",
+              "values": {
+                "temperature": -41.17
+              }
+            }, {
+              "startTime": "2022-06-10T17:00:00Z",
+              "values": {
+                "temperature": -41.1
+              }
+            }, {
+              "startTime": "2022-06-10T18:00:00Z",
+              "values": {
+                "temperature": -40.98
+              }
+            }, {
+              "startTime": "2022-06-10T19:00:00Z",
+              "values": {
+                "temperature": -40.19
+              }
+            }, {
+              "startTime": "2022-06-10T20:00:00Z",
+              "values": {
+                "temperature": -40.31
+              }
+            }, {
+              "startTime": "2022-06-10T21:00:00Z",
+              "values": {
+                "temperature": -40.44
+              }
+            }, {
+              "startTime": "2022-06-10T22:00:00Z",
+              "values": {
+                "temperature": -40.88
+              }
+            }, {
+              "startTime": "2022-06-10T23:00:00Z",
+              "values": {
+                "temperature": -41.47
+              }
+            }, {
+              "startTime": "2022-06-11T00:00:00Z",
+              "values": {
+                "temperature": -41.83
+              }
+            }, {
+              "startTime": "2022-06-11T01:00:00Z",
+              "values": {
+                "temperature": -42.2
+              }
+            }, {
+              "startTime": "2022-06-11T02:00:00Z",
+              "values": {
+                "temperature": -42.3
+              }
+            }, {
+              "startTime": "2022-06-11T03:00:00Z",
+              "values": {
+                "temperature": -42.34
+              }
+            }, {
+              "startTime": "2022-06-11T04:00:00Z",
+              "values": {
+                "temperature": -42.22
+              }
+            }, {
+              "startTime": "2022-06-11T05:00:00Z",
+              "values": {
+                "temperature": -42.04
+              }
+            }, {
+              "startTime": "2022-06-11T06:00:00Z",
+              "values": {
+                "temperature": -41.76
+              }
+            }, {
+              "startTime": "2022-06-11T07:00:00Z",
+              "values": {
+                "temperature": -41.49
+              }
+            }, {
+              "startTime": "2022-06-11T08:00:00Z",
+              "values": {
+                "temperature": -41.38
+              }
+            }, {
+              "startTime": "2022-06-11T09:00:00Z",
+              "values": {
+                "temperature": -41.07
+              }
+            }, {
+              "startTime": "2022-06-11T10:00:00Z",
+              "values": {
+                "temperature": -40.96
+              }
+            }, {
+              "startTime": "2022-06-11T11:00:00Z",
+              "values": {
+                "temperature": -41.14
+              }
+            }, {
+              "startTime": "2022-06-11T12:00:00Z",
+              "values": {
+                "temperature": -41.48
+              }
+            }, {
+              "startTime": "2022-06-11T13:00:00Z",
+              "values": {
+                "temperature": -41.64
+              }
+            }, {
+              "startTime": "2022-06-11T14:00:00Z",
+              "values": {
+                "temperature": -41.73
+              }
+            }, {
+              "startTime": "2022-06-11T15:00:00Z",
+              "values": {
+                "temperature": -41.67
+              }
+            }, {
+              "startTime": "2022-06-11T16:00:00Z",
+              "values": {
+                "temperature": -41.53
+              }
+            }, {
+              "startTime": "2022-06-11T17:00:00Z",
+              "values": {
+                "temperature": -41.76
+              }
+            }, {
+              "startTime": "2022-06-11T18:00:00Z",
+              "values": {
+                "temperature": -42.22
+              }
+            }, {
+              "startTime": "2022-06-11T19:00:00Z",
+              "values": {
+                "temperature": -42.46
+              }
+            }, {
+              "startTime": "2022-06-11T20:00:00Z",
+              "values": {
+                "temperature": -42.56
+              }
+            }, {
+              "startTime": "2022-06-11T21:00:00Z",
+              "values": {
+                "temperature": -42.79
+              }
+            }, {
+              "startTime": "2022-06-11T22:00:00Z",
+              "values": {
+                "temperature": -43.13
+              }
+            }, {
+              "startTime": "2022-06-11T23:00:00Z",
+              "values": {
+                "temperature": -43.34
+              }
+            }, {
+              "startTime": "2022-06-12T00:00:00Z",
+              "values": {
+                "temperature": -43.56
+              }
+            }, {
+              "startTime": "2022-06-12T01:00:00Z",
+              "values": {
+                "temperature": -44.02
+              }
+            }, {
+              "startTime": "2022-06-12T02:00:00Z",
+              "values": {
+                "temperature": -44.34
+              }
+            }, {
+              "startTime": "2022-06-12T03:00:00Z",
+              "values": {
+                "temperature": -44.55
+              }
+            }, {
+              "startTime": "2022-06-12T04:00:00Z",
+              "values": {
+                "temperature": -44.69
+              }
+            }, {
+              "startTime": "2022-06-12T05:00:00Z",
+              "values": {
+                "temperature": -44.7
+              }
+            }, {
+              "startTime": "2022-06-12T06:00:00Z",
+              "values": {
+                "temperature": -44.83
+              }
+            }, {
+              "startTime": "2022-06-12T07:00:00Z",
+              "values": {
+                "temperature": -44.74
+              }
+            }, {
+              "startTime": "2022-06-12T08:00:00Z",
+              "values": {
+                "temperature": -44.82
+              }
+            }, {
+              "startTime": "2022-06-12T09:00:00Z",
+              "values": {
+                "temperature": -44.77
+              }
+            }, {
+              "startTime": "2022-06-12T10:00:00Z",
+              "values": {
+                "temperature": -44.85
+              }
+            }, {
+              "startTime": "2022-06-12T11:00:00Z",
+              "values": {
+                "temperature": -44.82
+              }
+            }, {
+              "startTime": "2022-06-12T12:00:00Z",
+              "values": {
+                "temperature": -44.76
+              }
+            }, {
+              "startTime": "2022-06-12T13:00:00Z",
+              "values": {
+                "temperature": -44.92
+              }
+            }, {
+              "startTime": "2022-06-12T14:00:00Z",
+              "values": {
+                "temperature": -45.02
+              }
+            }, {
+              "startTime": "2022-06-12T15:00:00Z",
+              "values": {
+                "temperature": -45.01
+              }
+            }, {
+              "startTime": "2022-06-12T16:00:00Z",
+              "values": {
+                "temperature": -44.37
+              }
+            }, {
+              "startTime": "2022-06-12T17:00:00Z",
+              "values": {
+                "temperature": -44.15
+              }
+            }, {
+              "startTime": "2022-06-12T18:00:00Z",
+              "values": {
+                "temperature": -43.8
+              }
+            }, {
+              "startTime": "2022-06-12T19:00:00Z",
+              "values": {
+                "temperature": -41.71
+              }
+            }, {
+              "startTime": "2022-06-12T20:00:00Z",
+              "values": {
+                "temperature": -41.54
+              }
+            }, {
+              "startTime": "2022-06-12T21:00:00Z",
+              "values": {
+                "temperature": -41.52
+              }
+            }, {
+              "startTime": "2022-06-12T22:00:00Z",
+              "values": {
+                "temperature": -41.6
+              }
+            }, {
+              "startTime": "2022-06-12T23:00:00Z",
+              "values": {
+                "temperature": -41.52
+              }
+            }, {
+              "startTime": "2022-06-13T00:00:00Z",
+              "values": {
+                "temperature": -41.33
+              }
+            }, {
+              "startTime": "2022-06-13T01:00:00Z",
+              "values": {
+                "temperature": -41.07
+              }
+            }, {
+              "startTime": "2022-06-13T02:00:00Z",
+              "values": {
+                "temperature": -40.69
+              }
+            }, {
+              "startTime": "2022-06-13T03:00:00Z",
+              "values": {
+                "temperature": -40.56
+              }
+            }, {
+              "startTime": "2022-06-13T04:00:00Z",
+              "values": {
+                "temperature": -40.57
+              }
+            }, {
+              "startTime": "2022-06-13T05:00:00Z",
+              "values": {
+                "temperature": -40.25
+              }
+            }, {
+              "startTime": "2022-06-13T06:00:00Z",
+              "values": {
+                "temperature": -39.84
+              }
+            }, {
+              "startTime": "2022-06-13T07:00:00Z",
+              "values": {
+                "temperature": -39.73
+              }
+            }, {
+              "startTime": "2022-06-13T08:00:00Z",
+              "values": {
+                "temperature": -39.51
+              }
+            }, {
+              "startTime": "2022-06-13T09:00:00Z",
+              "values": {
+                "temperature": -39.6
+              }
+            }, {
+              "startTime": "2022-06-13T10:00:00Z",
+              "values": {
+                "temperature": -38.5
+              }
+            }, {
+              "startTime": "2022-06-13T11:00:00Z",
+              "values": {
+                "temperature": -38.39
+              }
+            }, {
+              "startTime": "2022-06-13T12:00:00Z",
+              "values": {
+                "temperature": -38.3
+              }
+            }, {
+              "startTime": "2022-06-13T13:00:00Z",
+              "values": {
+                "temperature": -37.81
+              }
+            }, {
+              "startTime": "2022-06-13T14:00:00Z",
+              "values": {
+                "temperature": -37.57
+              }
+            }, {
+              "startTime": "2022-06-13T15:00:00Z",
+              "values": {
+                "temperature": -36.9
+              }
+            }, {
+              "startTime": "2022-06-13T16:00:00Z",
+              "values": {
+                "temperature": -36.82
+              }
+            }, {
+              "startTime": "2022-06-13T17:00:00Z",
+              "values": {
+                "temperature": -36.72
+              }
+            }]
+          }]
+        }
+      }]
+    };
+    return _this;
+  } // componentDidMount() {
+  //     fetch("https://api.tomorrow.io/v4/timelines?location=-73.98529171943665,40.75872069597532&fields=temperature&timesteps=1h&units=metric&apikey=aT03ZHjdXxg5OQHPBxooMQgNn6V7o8DD")
+  //       .then(res => res.json())
+  //       .then(
+  //         (result) => {
+  //             console.log(result.data.timelines[0])
+  //           this.setState({
+  //             isLoaded: true,
+  //             items: result.data.timelines[0]
+  //           });
+  //         },
+  //         // Note: it's important to handle errors here
+  //         // instead of a catch() block so that we don't swallow
+  //         // exceptions from actual bugs in components.
+  //         (error) => {
+  //           this.setState({
+  //             isLoaded: true,
+  //             error
+  //           });
+  //         }
+  //       )
+  //   }
+
+
+  _createClass(Navbar, [{
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          error = _this$state.error,
+          isLoaded = _this$state.isLoaded,
+          items = _this$state.items;
+      console.log(items);
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("header", {
+          className: "block",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "weather",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Button, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+              children: items.map(function (item) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+                  children: [item.timestep, " ", item.timestep]
+                }, item.timestep);
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "container headercontainer",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              children: "Forwward"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              children: "Design"
+              className: "logoblock",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
+                "aria-current": "page",
+                className: "",
+                href: "/",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  children: "Forwward"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  children: "Design"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                    to: "/",
+                    children: "Home"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                    to: "/about",
+                    children: "about"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                    to: "/portfolio",
+                    children: "portfolio"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                    to: "/services",
+                    children: "services"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                    to: "/contact",
+                    children: "contact"
+                  })
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "rightitems",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "mailto:info@forwwarddesign.com",
+                children: "info@forwwarddesign.com"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "/contact",
+                className: "speakbutton",
+                children: "Speak With Us"
+              })]
             })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                to: "/",
-                children: "Home"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                to: "/about",
-                children: "about"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                to: "/portfolio",
-                children: "portfolio"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                to: "/services",
-                children: "services"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                to: "/contact",
-                children: "contact"
-              })
-            })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "rightitems",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            href: "mailto:info@forwwarddesign.com",
-            children: "info@forwwarddesign.com"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-            href: "/contact",
-            className: "speakbutton",
-            children: "Speak With Us"
           })]
-        })]
-      })
-    })
-  });
-}
+        })
+      });
+    }
+  }]);
+
+  return Navbar;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 ;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navbar);
+
+var Button = /*#__PURE__*/function (_React$Component2) {
+  _inherits(Button, _React$Component2);
+
+  var _super2 = _createSuper(Button);
+
+  function Button(props) {
+    var _this2;
+
+    _classCallCheck(this, Button);
+
+    _this2 = _super2.call(this, props);
+    _this2.state = {
+      value: 'null'
+    };
+    return _this2;
+  }
+
+  _createClass(Button, [{
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        onClick: function onClick() {
+          return _this3.setState({
+            value: 'X'
+          });
+        },
+        children: this.state.value
+      });
+    }
+  }]);
+
+  return Button;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 /***/ }),
 
