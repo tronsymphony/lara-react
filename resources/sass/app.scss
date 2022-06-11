@@ -32095,3 +32095,43 @@
     align-items: center;
     justify-content: center;
   }
+
+  // weather
+  .weather {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.weather ul {
+  padding: 0;
+  margin: 0;
+  max-height: 240px;
+  overflow: auto;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #000000cf;
+  padding: 10px 20px;
+  width: 250px;
+  li {
+    list-style: none;
+    font-size: 0.8rem;
+    margin: 5px 0;
+    color: #fff;
+}
+}
+
+.weather {}
+
+.weather button {
+    border: none;
+    background: transparent;
+}
+
+.weather button svg {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    fill: #fff;
+}

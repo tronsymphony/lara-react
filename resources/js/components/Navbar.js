@@ -1,13 +1,84 @@
-import React from "react";
+import React, { useState } from 'react';
+
+
 import { Link } from "react-router-dom";
 class Navbar extends React.Component{
+    constructor(props) {
+        super(props);
+    
+        this.state = {answer: null};
+    }
 
+    handleSubmit = (event) => {
+        console.log(event.target.name)
+        console.log(this.state)
+
+        this.setState({ answer: event.target.name });
+     
+    }
+
+    render(){
+        let weatherButton;
+        if(this.state.answer === "yes"){
+            weatherButton = <Weather />;
+        }
+
+        return (
+            <div>
+                <header className="block">
+                <div className="weather">
+                    {weatherButton}
+                    <button onClick={this.handleSubmit} name="yes">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M96.2 200.1C96.07 197.4 96 194.7 96 192C96 103.6 167.6 32 256 32C315.3 32 367 64.25 394.7 112.2C409.9 101.1 428.3 96 448 96C501 96 544 138.1 544 192C544 204.2 541.7 215.8 537.6 226.6C596 238.4 640 290.1 640 352C640 422.7 582.7 480 512 480H144C64.47 480 0 415.5 0 336C0 273.2 40.17 219.8 96.2 200.1z"/></svg>
+                    </button>
+                    <button onClick={this.handleSubmit} name="no">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+                    </button>
+
+                </div>
+                    <div className="container headercontainer">
+                        <div className="logoblock">
+                            <a aria-current="page" className="" href="/"><div>Forwward</div>
+                                <div>Design</div></a>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <Link to="/">Home</Link>
+                                </li>
+                                <li>
+                                    <Link to="/about">about</Link>
+                                </li>
+                                <li>
+                                    <Link to="/portfolio">portfolio</Link>
+                                </li>
+                                <li>
+                                    <Link to="/services">services</Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact">contact</Link>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div className="rightitems">
+                            <a href="mailto:info@forwwarddesign.com">info@forwwarddesign.com</a><a href="/contact" className="speakWeather">Speak With Us</a>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        );
+    }
+};
+export default Navbar;
+
+
+class Weather extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
           error: null,
           isLoaded: false,
-          items: [{
+          items: {
             "data": {
                 "timelines": [
                     {
@@ -673,7 +744,7 @@ class Navbar extends React.Component{
                     }
                 ]
             }
-        }]
+          }
         };
       }
     
@@ -700,74 +771,18 @@ class Navbar extends React.Component{
     //         }
     //       )
     //   }
-      
+
     render(){
         const { error, isLoaded, items } = this.state;
-        console.log(items)
+
         return (
-            <div>
-                
-                <header className="block">
-                <div className="weather">
-                    <Button></Button>
-                    <ul>
-          {items.map(item => (
-            <li key={item.timestep}>
-              {item.timestep} {item.timestep}
-            </li>
-          ))}
-        </ul>
-                </div>
-                    <div className="container headercontainer">
-                        <div className="logoblock">
-                            <a aria-current="page" className="" href="/"><div>Forwward</div>
-                                <div>Design</div></a>
-                        </div>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <Link to="/">Home</Link>
-                                </li>
-                                <li>
-                                    <Link to="/about">about</Link>
-                                </li>
-                                <li>
-                                    <Link to="/portfolio">portfolio</Link>
-                                </li>
-                                <li>
-                                    <Link to="/services">services</Link>
-                                </li>
-                                <li>
-                                    <Link to="/contact">contact</Link>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div className="rightitems">
-                            <a href="mailto:info@forwwarddesign.com">info@forwwarddesign.com</a><a href="/contact" className="speakbutton">Speak With Us</a>
-                        </div>
-                    </div>
-                </header>
-            </div>
+            <ul>
+                {items.data.timelines[0].intervals.map(item => (
+                    <li key={item.startTime}>
+                    {item.startTime} {item.values.temperature}
+                    </li>
+                ))}
+            </ul>
         );
-    }
-};
-export default Navbar;
-
-
-class Button extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          value: 'null',
-        };
-    }
-    render() {
-      return (
-        <button 
-        onClick={() => this.setState({value: 'X'})}
-        >
-          {this.state.value}
-        </button>
-      );
     }  
   }
