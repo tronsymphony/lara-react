@@ -44369,18 +44369,21 @@ section.wysiwyg.slant {
   right: 0;
   background: rgba(0, 0, 0, 0.8117647059);
   padding: 10px 20px;
-  width: 250px;
+  width: 270px;
 }
 .weather ul li {
   list-style: none;
   font-size: 0.8rem;
-  margin: 5px 0;
+  margin: 10px 0;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .weather button {
   border: none;
   background: transparent;
+  color: #fff;
 }
 
 .weather button svg {

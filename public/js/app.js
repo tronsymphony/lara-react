@@ -6284,8 +6284,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (event) {
-      console.log(event.target.name);
-      console.log(_this.state);
+      event.stopPropagation();
 
       _this.setState({
         answer: event.target.name
@@ -6312,27 +6311,11 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
           className: "block",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "weather",
-            children: [weatherButton, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
               onClick: this.handleSubmit,
               name: "yes",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                xmlns: "http://www.w3.org/2000/svg",
-                viewBox: "0 0 640 512",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: "M96.2 200.1C96.07 197.4 96 194.7 96 192C96 103.6 167.6 32 256 32C315.3 32 367 64.25 394.7 112.2C409.9 101.1 428.3 96 448 96C501 96 544 138.1 544 192C544 204.2 541.7 215.8 537.6 226.6C596 238.4 640 290.1 640 352C640 422.7 582.7 480 512 480H144C64.47 480 0 415.5 0 336C0 273.2 40.17 219.8 96.2 200.1z"
-                })
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-              onClick: this.handleSubmit,
-              name: "no",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-                xmlns: "http://www.w3.org/2000/svg",
-                viewBox: "0 0 320 512",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                  d: "M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"
-                })
-              })
-            })]
+              children: "weather"
+            }), weatherButton]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "container headercontainer",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -6410,576 +6393,610 @@ var Weather = /*#__PURE__*/function (_React$Component2) {
     _classCallCheck(this, Weather);
 
     _this2 = _super2.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this2), "handleSubmit", function (event) {
+      event.stopPropagation();
+
+      _this2.setState({
+        answer: event.target.name
+      });
+    });
+
     _this2.state = {
+      answer: null,
       error: null,
       isLoaded: false,
       items: {
-        "data": {
-          "timelines": [{
-            "timestep": "1h",
-            "endTime": "2022-06-13T17:00:00Z",
-            "startTime": "2022-06-09T05:00:00Z",
-            "intervals": [{
-              "startTime": "2022-06-09T05:00:00Z",
-              "values": {
-                "temperature": -47.79
-              }
-            }, {
-              "startTime": "2022-06-09T06:00:00Z",
-              "values": {
-                "temperature": -47.22
-              }
-            }, {
-              "startTime": "2022-06-09T07:00:00Z",
-              "values": {
-                "temperature": -46.99
-              }
-            }, {
-              "startTime": "2022-06-09T08:00:00Z",
-              "values": {
-                "temperature": -46.61
-              }
-            }, {
-              "startTime": "2022-06-09T09:00:00Z",
-              "values": {
-                "temperature": -46.38
-              }
-            }, {
-              "startTime": "2022-06-09T10:00:00Z",
-              "values": {
-                "temperature": -46.03
-              }
-            }, {
-              "startTime": "2022-06-09T11:00:00Z",
-              "values": {
-                "temperature": -46.04
-              }
-            }, {
-              "startTime": "2022-06-09T12:00:00Z",
-              "values": {
-                "temperature": -45.87
-              }
-            }, {
-              "startTime": "2022-06-09T13:00:00Z",
-              "values": {
-                "temperature": -45.77
-              }
-            }, {
-              "startTime": "2022-06-09T14:00:00Z",
-              "values": {
-                "temperature": -45.33
-              }
-            }, {
-              "startTime": "2022-06-09T15:00:00Z",
-              "values": {
-                "temperature": -45.18
-              }
-            }, {
-              "startTime": "2022-06-09T16:00:00Z",
-              "values": {
-                "temperature": -45.69
-              }
-            }, {
-              "startTime": "2022-06-09T17:00:00Z",
-              "values": {
-                "temperature": -45.33
-              }
-            }, {
-              "startTime": "2022-06-09T18:00:00Z",
-              "values": {
-                "temperature": -44.86
-              }
-            }, {
-              "startTime": "2022-06-09T19:00:00Z",
-              "values": {
-                "temperature": -44.58
-              }
-            }, {
-              "startTime": "2022-06-09T20:00:00Z",
-              "values": {
-                "temperature": -44.16
-              }
-            }, {
-              "startTime": "2022-06-09T21:00:00Z",
-              "values": {
-                "temperature": -43.52
-              }
-            }, {
-              "startTime": "2022-06-09T22:00:00Z",
-              "values": {
-                "temperature": -42.76
-              }
-            }, {
-              "startTime": "2022-06-09T23:00:00Z",
-              "values": {
-                "temperature": -42.29
-              }
-            }, {
-              "startTime": "2022-06-10T00:00:00Z",
-              "values": {
-                "temperature": -41.55
-              }
-            }, {
-              "startTime": "2022-06-10T01:00:00Z",
-              "values": {
-                "temperature": -41.38
-              }
-            }, {
-              "startTime": "2022-06-10T02:00:00Z",
-              "values": {
-                "temperature": -41.36
-              }
-            }, {
-              "startTime": "2022-06-10T03:00:00Z",
-              "values": {
-                "temperature": -41.7
-              }
-            }, {
-              "startTime": "2022-06-10T04:00:00Z",
-              "values": {
-                "temperature": -41.92
-              }
-            }, {
-              "startTime": "2022-06-10T05:00:00Z",
-              "values": {
-                "temperature": -41.53
-              }
-            }, {
-              "startTime": "2022-06-10T06:00:00Z",
-              "values": {
-                "temperature": -41.14
-              }
-            }, {
-              "startTime": "2022-06-10T07:00:00Z",
-              "values": {
-                "temperature": -40.23
-              }
-            }, {
-              "startTime": "2022-06-10T08:00:00Z",
-              "values": {
-                "temperature": -39.97
-              }
-            }, {
-              "startTime": "2022-06-10T09:00:00Z",
-              "values": {
-                "temperature": -39.59
-              }
-            }, {
-              "startTime": "2022-06-10T10:00:00Z",
-              "values": {
-                "temperature": -40.17
-              }
-            }, {
-              "startTime": "2022-06-10T11:00:00Z",
-              "values": {
-                "temperature": -39.88
-              }
-            }, {
-              "startTime": "2022-06-10T12:00:00Z",
-              "values": {
-                "temperature": -39.92
-              }
-            }, {
-              "startTime": "2022-06-10T13:00:00Z",
-              "values": {
-                "temperature": -39.79
-              }
-            }, {
-              "startTime": "2022-06-10T14:00:00Z",
-              "values": {
-                "temperature": -40.48
-              }
-            }, {
-              "startTime": "2022-06-10T15:00:00Z",
-              "values": {
-                "temperature": -40.8
-              }
-            }, {
-              "startTime": "2022-06-10T16:00:00Z",
-              "values": {
-                "temperature": -41.17
-              }
-            }, {
-              "startTime": "2022-06-10T17:00:00Z",
-              "values": {
-                "temperature": -41.1
-              }
-            }, {
-              "startTime": "2022-06-10T18:00:00Z",
-              "values": {
-                "temperature": -40.98
-              }
-            }, {
-              "startTime": "2022-06-10T19:00:00Z",
-              "values": {
-                "temperature": -40.19
-              }
-            }, {
-              "startTime": "2022-06-10T20:00:00Z",
-              "values": {
-                "temperature": -40.31
-              }
-            }, {
-              "startTime": "2022-06-10T21:00:00Z",
-              "values": {
-                "temperature": -40.44
-              }
-            }, {
-              "startTime": "2022-06-10T22:00:00Z",
-              "values": {
-                "temperature": -40.88
-              }
-            }, {
-              "startTime": "2022-06-10T23:00:00Z",
-              "values": {
-                "temperature": -41.47
-              }
-            }, {
-              "startTime": "2022-06-11T00:00:00Z",
-              "values": {
-                "temperature": -41.83
-              }
-            }, {
-              "startTime": "2022-06-11T01:00:00Z",
-              "values": {
-                "temperature": -42.2
-              }
-            }, {
-              "startTime": "2022-06-11T02:00:00Z",
-              "values": {
-                "temperature": -42.3
-              }
-            }, {
-              "startTime": "2022-06-11T03:00:00Z",
-              "values": {
-                "temperature": -42.34
-              }
-            }, {
-              "startTime": "2022-06-11T04:00:00Z",
-              "values": {
-                "temperature": -42.22
-              }
-            }, {
-              "startTime": "2022-06-11T05:00:00Z",
-              "values": {
-                "temperature": -42.04
-              }
-            }, {
-              "startTime": "2022-06-11T06:00:00Z",
-              "values": {
-                "temperature": -41.76
-              }
-            }, {
-              "startTime": "2022-06-11T07:00:00Z",
-              "values": {
-                "temperature": -41.49
-              }
-            }, {
-              "startTime": "2022-06-11T08:00:00Z",
-              "values": {
-                "temperature": -41.38
-              }
-            }, {
-              "startTime": "2022-06-11T09:00:00Z",
-              "values": {
-                "temperature": -41.07
-              }
-            }, {
-              "startTime": "2022-06-11T10:00:00Z",
-              "values": {
-                "temperature": -40.96
-              }
-            }, {
-              "startTime": "2022-06-11T11:00:00Z",
-              "values": {
-                "temperature": -41.14
-              }
-            }, {
-              "startTime": "2022-06-11T12:00:00Z",
-              "values": {
-                "temperature": -41.48
-              }
-            }, {
-              "startTime": "2022-06-11T13:00:00Z",
-              "values": {
-                "temperature": -41.64
-              }
-            }, {
-              "startTime": "2022-06-11T14:00:00Z",
-              "values": {
-                "temperature": -41.73
-              }
-            }, {
-              "startTime": "2022-06-11T15:00:00Z",
-              "values": {
-                "temperature": -41.67
-              }
-            }, {
-              "startTime": "2022-06-11T16:00:00Z",
-              "values": {
-                "temperature": -41.53
-              }
-            }, {
-              "startTime": "2022-06-11T17:00:00Z",
-              "values": {
-                "temperature": -41.76
-              }
-            }, {
-              "startTime": "2022-06-11T18:00:00Z",
-              "values": {
-                "temperature": -42.22
-              }
-            }, {
-              "startTime": "2022-06-11T19:00:00Z",
-              "values": {
-                "temperature": -42.46
-              }
-            }, {
-              "startTime": "2022-06-11T20:00:00Z",
-              "values": {
-                "temperature": -42.56
-              }
-            }, {
-              "startTime": "2022-06-11T21:00:00Z",
-              "values": {
-                "temperature": -42.79
-              }
-            }, {
-              "startTime": "2022-06-11T22:00:00Z",
-              "values": {
-                "temperature": -43.13
-              }
-            }, {
-              "startTime": "2022-06-11T23:00:00Z",
-              "values": {
-                "temperature": -43.34
-              }
-            }, {
-              "startTime": "2022-06-12T00:00:00Z",
-              "values": {
-                "temperature": -43.56
-              }
-            }, {
-              "startTime": "2022-06-12T01:00:00Z",
-              "values": {
-                "temperature": -44.02
-              }
-            }, {
-              "startTime": "2022-06-12T02:00:00Z",
-              "values": {
-                "temperature": -44.34
-              }
-            }, {
-              "startTime": "2022-06-12T03:00:00Z",
-              "values": {
-                "temperature": -44.55
-              }
-            }, {
-              "startTime": "2022-06-12T04:00:00Z",
-              "values": {
-                "temperature": -44.69
-              }
-            }, {
-              "startTime": "2022-06-12T05:00:00Z",
-              "values": {
-                "temperature": -44.7
-              }
-            }, {
-              "startTime": "2022-06-12T06:00:00Z",
-              "values": {
-                "temperature": -44.83
-              }
-            }, {
-              "startTime": "2022-06-12T07:00:00Z",
-              "values": {
-                "temperature": -44.74
-              }
-            }, {
-              "startTime": "2022-06-12T08:00:00Z",
-              "values": {
-                "temperature": -44.82
-              }
-            }, {
-              "startTime": "2022-06-12T09:00:00Z",
-              "values": {
-                "temperature": -44.77
-              }
-            }, {
-              "startTime": "2022-06-12T10:00:00Z",
-              "values": {
-                "temperature": -44.85
-              }
-            }, {
-              "startTime": "2022-06-12T11:00:00Z",
-              "values": {
-                "temperature": -44.82
-              }
-            }, {
-              "startTime": "2022-06-12T12:00:00Z",
-              "values": {
-                "temperature": -44.76
-              }
-            }, {
-              "startTime": "2022-06-12T13:00:00Z",
-              "values": {
-                "temperature": -44.92
-              }
-            }, {
-              "startTime": "2022-06-12T14:00:00Z",
-              "values": {
-                "temperature": -45.02
-              }
-            }, {
-              "startTime": "2022-06-12T15:00:00Z",
-              "values": {
-                "temperature": -45.01
-              }
-            }, {
-              "startTime": "2022-06-12T16:00:00Z",
-              "values": {
-                "temperature": -44.37
-              }
-            }, {
-              "startTime": "2022-06-12T17:00:00Z",
-              "values": {
-                "temperature": -44.15
-              }
-            }, {
-              "startTime": "2022-06-12T18:00:00Z",
-              "values": {
-                "temperature": -43.8
-              }
-            }, {
-              "startTime": "2022-06-12T19:00:00Z",
-              "values": {
-                "temperature": -41.71
-              }
-            }, {
-              "startTime": "2022-06-12T20:00:00Z",
-              "values": {
-                "temperature": -41.54
-              }
-            }, {
-              "startTime": "2022-06-12T21:00:00Z",
-              "values": {
-                "temperature": -41.52
-              }
-            }, {
-              "startTime": "2022-06-12T22:00:00Z",
-              "values": {
-                "temperature": -41.6
-              }
-            }, {
-              "startTime": "2022-06-12T23:00:00Z",
-              "values": {
-                "temperature": -41.52
-              }
-            }, {
-              "startTime": "2022-06-13T00:00:00Z",
-              "values": {
-                "temperature": -41.33
-              }
-            }, {
-              "startTime": "2022-06-13T01:00:00Z",
-              "values": {
-                "temperature": -41.07
-              }
-            }, {
-              "startTime": "2022-06-13T02:00:00Z",
-              "values": {
-                "temperature": -40.69
-              }
-            }, {
-              "startTime": "2022-06-13T03:00:00Z",
-              "values": {
-                "temperature": -40.56
-              }
-            }, {
-              "startTime": "2022-06-13T04:00:00Z",
-              "values": {
-                "temperature": -40.57
-              }
-            }, {
-              "startTime": "2022-06-13T05:00:00Z",
-              "values": {
-                "temperature": -40.25
-              }
-            }, {
-              "startTime": "2022-06-13T06:00:00Z",
-              "values": {
-                "temperature": -39.84
-              }
-            }, {
-              "startTime": "2022-06-13T07:00:00Z",
-              "values": {
-                "temperature": -39.73
-              }
-            }, {
-              "startTime": "2022-06-13T08:00:00Z",
-              "values": {
-                "temperature": -39.51
-              }
-            }, {
-              "startTime": "2022-06-13T09:00:00Z",
-              "values": {
-                "temperature": -39.6
-              }
-            }, {
-              "startTime": "2022-06-13T10:00:00Z",
-              "values": {
-                "temperature": -38.5
-              }
-            }, {
-              "startTime": "2022-06-13T11:00:00Z",
-              "values": {
-                "temperature": -38.39
-              }
-            }, {
-              "startTime": "2022-06-13T12:00:00Z",
-              "values": {
-                "temperature": -38.3
-              }
-            }, {
-              "startTime": "2022-06-13T13:00:00Z",
-              "values": {
-                "temperature": -37.81
-              }
-            }, {
-              "startTime": "2022-06-13T14:00:00Z",
-              "values": {
-                "temperature": -37.57
-              }
-            }, {
-              "startTime": "2022-06-13T15:00:00Z",
-              "values": {
-                "temperature": -36.9
-              }
-            }, {
-              "startTime": "2022-06-13T16:00:00Z",
-              "values": {
-                "temperature": -36.82
-              }
-            }, {
-              "startTime": "2022-06-13T17:00:00Z",
-              "values": {
-                "temperature": -36.72
-              }
-            }]
+        "timelines": [{
+          "timestep": "1h",
+          "endTime": "2022-06-12T02:00:00-04:00",
+          "startTime": "2022-06-11T02:00:00-04:00",
+          "intervals": [{
+            "startTime": "2022-06-11T02:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 92,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-10T12:53:00Z",
+              "sunsetTime": "2022-06-11T02:53:00Z",
+              "temperature": 63.5,
+              "uvIndex": 0,
+              "weatherCode": 1001,
+              "windDirection": 265.5,
+              "windGust": 6.01,
+              "windSpeed": 2.94
+            }
+          }, {
+            "startTime": "2022-06-11T03:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 98.26,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 63,
+              "uvIndex": 0,
+              "weatherCode": 2100,
+              "windDirection": 200.44,
+              "windGust": 2.61,
+              "windSpeed": 2
+            }
+          }, {
+            "startTime": "2022-06-11T04:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 100,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 63.07,
+              "uvIndex": 0,
+              "weatherCode": 2000,
+              "windDirection": 109.99,
+              "windGust": 2.31,
+              "windSpeed": 1.67
+            }
+          }, {
+            "startTime": "2022-06-11T05:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 98.48,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 63.08,
+              "uvIndex": 0,
+              "weatherCode": 2100,
+              "windDirection": 84.24,
+              "windGust": 3.2,
+              "windSpeed": 2.4
+            }
+          }, {
+            "startTime": "2022-06-11T06:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 93.91,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 63.5,
+              "uvIndex": 0,
+              "weatherCode": 1001,
+              "windDirection": 74.6,
+              "windGust": 4.09,
+              "windSpeed": 0.35
+            }
+          }, {
+            "startTime": "2022-06-11T07:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 93.84,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 63.33,
+              "uvIndex": 0,
+              "weatherCode": 1001,
+              "windDirection": 268.7,
+              "windGust": 3.05,
+              "windSpeed": 1.39
+            }
+          }, {
+            "startTime": "2022-06-11T08:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 93.83,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 62.79,
+              "uvIndex": 0,
+              "weatherCode": 1101,
+              "windDirection": 205.44,
+              "windGust": 3.35,
+              "windSpeed": 2.37
+            }
+          }, {
+            "startTime": "2022-06-11T09:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 2,
+              "humidity": 93.94,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 61.42,
+              "uvIndex": 0,
+              "weatherCode": 1102,
+              "windDirection": 234.26,
+              "windGust": 2.11,
+              "windSpeed": 1.77
+            }
+          }, {
+            "startTime": "2022-06-11T10:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 2,
+              "humidity": 93.8,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 63.22,
+              "uvIndex": 0,
+              "weatherCode": 1001,
+              "windDirection": 243.7,
+              "windGust": 2.63,
+              "windSpeed": 1.89
+            }
+          }, {
+            "startTime": "2022-06-11T11:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 89.34,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 65.09,
+              "uvIndex": 1,
+              "weatherCode": 1001,
+              "windDirection": 252.26,
+              "windGust": 2.65,
+              "windSpeed": 2.53
+            }
+          }, {
+            "startTime": "2022-06-11T12:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 91.97,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 65.14,
+              "uvIndex": 3,
+              "weatherCode": 1001,
+              "windDirection": 251.4,
+              "windGust": 4.5,
+              "windSpeed": 4.16
+            }
+          }, {
+            "startTime": "2022-06-11T13:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 2,
+              "humidity": 93.06,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 65.33,
+              "uvIndex": 5,
+              "weatherCode": 2100,
+              "windDirection": 249.36,
+              "windGust": 6.29,
+              "windSpeed": 5.57
+            }
+          }, {
+            "startTime": "2022-06-11T14:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 3,
+              "humidity": 87.63,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 66.89,
+              "uvIndex": 7,
+              "weatherCode": 1001,
+              "windDirection": 247.68,
+              "windGust": 8.22,
+              "windSpeed": 7.08
+            }
+          }, {
+            "startTime": "2022-06-11T15:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 4,
+              "humidity": 85.6,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 68.28,
+              "uvIndex": 8,
+              "weatherCode": 1001,
+              "windDirection": 250.45,
+              "windGust": 10.12,
+              "windSpeed": 8.3
+            }
+          }, {
+            "startTime": "2022-06-11T16:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 4,
+              "humidity": 94.05,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 67.06,
+              "uvIndex": 9,
+              "weatherCode": 2100,
+              "windDirection": 252.85,
+              "windGust": 15.27,
+              "windSpeed": 10.85
+            }
+          }, {
+            "startTime": "2022-06-11T17:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 4,
+              "humidity": 91.04,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 67.03,
+              "uvIndex": 8,
+              "weatherCode": 1001,
+              "windDirection": 252.76,
+              "windGust": 17.5,
+              "windSpeed": 12.45
+            }
+          }, {
+            "startTime": "2022-06-11T18:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 3,
+              "humidity": 92.23,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 65.39,
+              "uvIndex": 6,
+              "weatherCode": 1001,
+              "windDirection": 248.05,
+              "windGust": 14.11,
+              "windSpeed": 10.4
+            }
+          }, {
+            "startTime": "2022-06-11T19:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 3,
+              "humidity": 91.36,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 65.04,
+              "uvIndex": 4,
+              "weatherCode": 1001,
+              "windDirection": 249.26,
+              "windGust": 13.95,
+              "windSpeed": 10.39
+            }
+          }, {
+            "startTime": "2022-06-11T20:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 3,
+              "humidity": 86.26,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 64.77,
+              "uvIndex": 2,
+              "weatherCode": 1001,
+              "windDirection": 251.69,
+              "windGust": 13.86,
+              "windSpeed": 10.39
+            }
+          }, {
+            "startTime": "2022-06-11T21:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 2,
+              "humidity": 72.19,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 69.72,
+              "uvIndex": 0,
+              "weatherCode": 1000,
+              "windDirection": 233.51,
+              "windGust": 21.73,
+              "windSpeed": 12.18
+            }
+          }, {
+            "startTime": "2022-06-11T22:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 79.82,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 67.52,
+              "uvIndex": 0,
+              "weatherCode": 1000,
+              "windDirection": 231.06,
+              "windGust": 17.4,
+              "windSpeed": 9.71
+            }
+          }, {
+            "startTime": "2022-06-11T23:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 83.82,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 66.25,
+              "uvIndex": 0,
+              "weatherCode": 1000,
+              "windDirection": 231,
+              "windGust": 11.13,
+              "windSpeed": 6.01
+            }
+          }, {
+            "startTime": "2022-06-12T00:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 85.36,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 65.86,
+              "uvIndex": 0,
+              "weatherCode": 1000,
+              "windDirection": 220.17,
+              "windGust": 7.18,
+              "windSpeed": 3.46
+            }
+          }, {
+            "startTime": "2022-06-12T01:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 85.55,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 65.74,
+              "uvIndex": 0,
+              "weatherCode": 1000,
+              "windDirection": 182.91,
+              "windGust": 3.4,
+              "windSpeed": 0.96
+            }
+          }, {
+            "startTime": "2022-06-12T02:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 86.01,
+              "mepHealthConcern": 0,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 65.44,
+              "uvIndex": 0,
+              "weatherCode": 1000,
+              "windDirection": 32.07,
+              "windGust": 3.09,
+              "windSpeed": 1.2
+            }
           }]
-        }
+        }, {
+          "timestep": "1d",
+          "endTime": "2022-06-11T09:00:00-04:00",
+          "startTime": "2022-06-10T09:00:00-04:00",
+          "intervals": [{
+            "startTime": "2022-06-10T09:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 3,
+              "humidity": 100,
+              "mepHealthConcern": 3,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-10T12:53:00Z",
+              "sunsetTime": "2022-06-11T02:53:00Z",
+              "temperature": 71.6,
+              "uvIndex": 9,
+              "weatherCode": 1001,
+              "windDirection": 230.44,
+              "windGust": 12.02,
+              "windSpeed": 8.06
+            }
+          }, {
+            "startTime": "2022-06-11T09:00:00-04:00",
+            "values": {
+              "epaHealthConcern": 4,
+              "humidity": 94.05,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-11T12:53:00Z",
+              "sunsetTime": "2022-06-12T02:53:00Z",
+              "temperature": 69.72,
+              "uvIndex": 9,
+              "weatherCode": 1001,
+              "windDirection": 228.25,
+              "windGust": 21.73,
+              "windSpeed": 12.45
+            }
+          }]
+        }, {
+          "timestep": "current",
+          "endTime": "2022-06-11T02:02:00-04:00",
+          "startTime": "2022-06-11T02:02:00-04:00",
+          "intervals": [{
+            "startTime": "2022-06-11T02:02:00-04:00",
+            "values": {
+              "epaHealthConcern": 1,
+              "humidity": 92,
+              "mepHealthConcern": 1,
+              "moonPhase": 3,
+              "precipitationIntensity": 0,
+              "precipitationType": 0,
+              "sunriseTime": "2022-06-10T12:53:00Z",
+              "sunsetTime": "2022-06-11T02:53:00Z",
+              "temperature": 63.5,
+              "uvIndex": 0,
+              "weatherCode": 1001,
+              "windDirection": 265.5,
+              "windGust": 6.01,
+              "windSpeed": 2.94
+            }
+          }]
+        }],
+        "warnings": [{
+          "code": 246009,
+          "type": "Missing Time Range",
+          "message": "The timestep is not supported in full for the time range requested.",
+          "meta": {
+            "from": "-6h",
+            "to": "+6h",
+            "timestep": "current"
+          }
+        }]
       }
     };
     return _this2;
   } // componentDidMount() {
-  //     fetch("https://api.tomorrow.io/v4/timelines?location=-73.98529171943665,40.75872069597532&fields=temperature&timesteps=1h&units=metric&apikey=aT03ZHjdXxg5OQHPBxooMQgNn6V7o8DD")
+  //     const queryString = require('query-string');
+  //     const moment = require("moment");
+  //     // set the Timelines GET endpoint as the target URL
+  //         const getTimelineURL = "https://api.tomorrow.io/v4/timelines";
+  //         // get your key from app.tomorrow.io/development/keys
+  //         const apikey = "aT03ZHjdXxg5OQHPBxooMQgNn6V7o8DD";
+  //         // pick the location, as a latlong pair
+  //         let location = [33.9892067262757, -118.4332404015353];
+  //         // list the fields
+  //         const fields = [
+  //         "precipitationIntensity",
+  //         "precipitationType",
+  //         "windSpeed",
+  //         "windGust",
+  //         "windDirection",
+  //         "temperature",
+  //         "humidity",
+  //         "windDirection",
+  //         "epaHealthConcern",
+  //         "mepHealthConcern",
+  //         "weatherCode",
+  //         "sunriseTime",
+  //         "sunsetTime",
+  //         "moonPhase",
+  //         "uvIndex"
+  //         ];
+  //         // choose the unit system, either metric or imperial
+  //         const units = "imperial";
+  //         // set the timesteps, like "current", "1h" and "1d"
+  //         const timesteps = ["current", "1h", "1d"];
+  //         // configure the time frame up to 6 hours back and 15 days out
+  //         const now = moment.utc();
+  //         const startTime = moment.utc(now).add(0, "minutes").toISOString();
+  //         const endTime = moment.utc(now).add(1, "days").toISOString();
+  //         // specify the timezone, using standard IANA timezone format
+  //         const timezone = "America/New_York";
+  //         // request the timelines with all the query string parameters as options
+  //         const getTimelineParameters =  queryString.stringify({
+  //             apikey,
+  //             location,
+  //             fields,
+  //             units,
+  //             timesteps,
+  //             startTime,
+  //             endTime,
+  //             timezone,
+  //         }, {arrayFormat: "comma"});
+  //     fetch(getTimelineURL + "?" + getTimelineParameters)
   //       .then(res => res.json())
   //       .then(
   //         (result) => {
-  //             console.log(result.data.timelines[0])
-  //           this.setState({
-  //             isLoaded: true,
-  //             items: result.data.timelines[0]
-  //           });
+  //             console.log(result.data)
+  //         //   this.setState({
+  //         //     isLoaded: true,
+  //         //     items: result.data.timelines[0]
+  //         //   });
   //         },
   //         // Note: it's important to handle errors here
   //         // instead of a catch() block so that we don't swallow
@@ -7000,13 +7017,45 @@ var Weather = /*#__PURE__*/function (_React$Component2) {
       var _this$state = this.state,
           error = _this$state.error,
           isLoaded = _this$state.isLoaded,
-          items = _this$state.items;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
-        children: items.data.timelines[0].intervals.map(function (item) {
+          items = _this$state.items,
+          answer = _this$state.answer;
+
+      if (this.state.answer === "no") {
+        console.log('f');
+        ReactDOM.unmountComponentAtNode(Weather);
+      }
+
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          onClick: this.handleSubmit,
+          name: "no",
+          children: "close"
+        }), items.timelines[0].intervals.map(function (item) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-            children: [item.startTime, " ", item.values.temperature]
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+              children: ["Start Time: ", item.startTime, " "]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+              children: ["Temperature: ", item.values.temperature, "\xB0F"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+              children: ["Wind Direction: ", item.values.windDirection]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+              children: ["Wind Speed: ", item.values.windSpeed, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+                children: "mph"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+              children: ["Moon Phase: ", {
+                '0': 'New',
+                '1': 'Waxing Crescent',
+                '2': 'First Quarter',
+                '3': 'Waxing Gibbous',
+                '4': 'Full',
+                '5': 'Waning Gibbous',
+                '6': 'Third Quarter',
+                '7': 'Waning Crescent'
+              }[item.values.moonPhase]]
+            })]
           }, item.startTime);
-        })
+        })]
       });
     }
   }]);
