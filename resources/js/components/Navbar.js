@@ -774,4 +774,4 @@ class Weather extends React.Component {
             
         );
     }  
-  }
+  } 
