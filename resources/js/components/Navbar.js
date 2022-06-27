@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-
-
 import { Link } from "react-router-dom";
+
 class Navbar extends React.Component{
     constructor(props) {
         super(props);
@@ -10,33 +9,20 @@ class Navbar extends React.Component{
 
 
 
-    handleSubmit = (event) => {
-        event.stopPropagation()
-        this.setState({ answer: event.target.name });
-     
-    }
-
     render(){
-        let weatherButton;
-        if(this.state.answer === "yes"){
-            weatherButton = <Weather />;
-        }
 
         return (
             <div>
                 <header className="block">
                 <div className="weather">
-                   
-                    <button onClick={this.handleSubmit} name="yes">
-                    weather
-                    </button>
-                    {weatherButton}
-
+                <Weather />
                 </div>
                     <div className="container headercontainer">
                         <div className="logoblock">
-                            <a aria-current="page" className="" href="/"><div>Forwward</div>
-                                <div>Design</div></a>
+                            <a aria-current="page" className="" href="/">
+                                <div>Forwward</div>
+                                <div>Design</div>
+                            </a>
                         </div>
                         <nav>
                             <ul>
@@ -66,16 +52,15 @@ class Navbar extends React.Component{
         );
     }
 };
-export default Navbar;
 
+export default Navbar;
 
 class Weather extends React.Component {
 
     constructor(props) {
         super(props);
- 
         this.state = {
-            answer: null,
+          answer: null,
           error: null,
           isLoaded: false,
           items: {
@@ -650,7 +635,6 @@ class Weather extends React.Component {
         };
       }
     
-
     // componentDidMount() {
     //     const queryString = require('query-string');
     //     const moment = require("moment");
@@ -729,25 +713,26 @@ class Weather extends React.Component {
     //       )
     //   }
 
-
     handleSubmit = (event) => {
         event.stopPropagation()
         this.setState({ answer: event.target.name });
      
     }
+    
     render(){
         const { error, isLoaded, items , answer } = this.state;
-        if(this.state.answer === "no"){
-            console.log('f')
-            ReactDOM.unmountComponentAtNode(Weather); 
-
+   
+        if(!this.props.show){
+            return null;
         }
         return (
-            
-            <ul>
-                  <button onClick={this.handleSubmit} name="no">
+            <div>
+
+            <button onClick={this.handleSubmit} name="yes">view weather</button>
+            <ul show={this.state.show}>
+                <button onClick={this.handleSubmit} name="no">
                     close
-                    </button>
+                </button>
 
                 {items.timelines[0].intervals.map(item => (
                     <li key={item.startTime}>
@@ -769,9 +754,9 @@ class Weather extends React.Component {
                         }</span>
                     </li>
                 ))}
-            
             </ul>
-            
+            </div>
+
         );
     }  
   }  
