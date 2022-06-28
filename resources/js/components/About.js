@@ -4,28 +4,7 @@ export default function AboutPage() {
     return (
         <main>
             <div>
-                <div>
-                    <header className="block">
-                        <div className="container headercontainer">
-                            <div className="logoblock">
-                                <a href="/">
-                                    <div>Forwward</div>
-                                    <div>Design</div>
-                                </a>
-                            </div>
-                            <nav>
-                                <ul>
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/about">About</a></li>
-                                    <li><a href="/portfolio">Portfolio</a></li>
-                                    <li><a href="/services">services</a></li>
-                                    <li><a href="/contact">contact</a></li>
-                                </ul>
-                            </nav>
-                            <div className="rightitems"><a href="mailto:info@forwwarddesign.com">info@forwwarddesign.com</a><a href="/contact" className="speakbutton">Speak With Us</a></div>
-                        </div>
-                    </header>
-                </div>
+             
                 <section className="image-background">
                     <div className="background"><img alt="Bournemouth Big Wheel" sizes="[object Object]" src="/images/about-c2bc148dbe96be8bd4c62af4ba2cc44f.png" title /></div>
                     <div className="container px-0">

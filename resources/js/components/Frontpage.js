@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 
 import Home from "./Home";
 import AboutPage from "./About";
+import Profile from "./Profile";
 
 function MyApp() {
     return (
@@ -14,6 +15,7 @@ function MyApp() {
         <Routes>
             <Route path="/" element={<Home /> } />
             <Route path="/about" element={<AboutPage /> } />
+            <Route path="/profile" element={<Profile /> } />
         </Routes>
         </>
     );
@@ -24,5 +26,5 @@ if (document.getElementById('app')) {
         <BrowserRouter>
             <MyApp />
         </BrowserRouter>
-            , document.getElementById('app'));
+    , document.getElementById('app'));
 }
