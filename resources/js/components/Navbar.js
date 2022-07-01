@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link ,Outlet } from "react-router-dom";
 import ButtonOpen from './Modal';
 
 class Navbar extends React.Component {
@@ -29,6 +29,9 @@ class Navbar extends React.Component {
                                     <Link to="/">Home</Link>
                                 </li>
                                 <li>
+                                <Link to="/profile">profile</Link>
+                            </li>
+                                <li>
                                     <Link to="/about">about</Link>
                                 </li>
                                 <li>
@@ -47,6 +50,7 @@ class Navbar extends React.Component {
                         </div>
                     </div>
                 </header>
+
             </div>
         );
     }
