@@ -5,7 +5,7 @@ export default function Profile() {
         <>
             <main>
                 <section className="image-background">
-                    <div className="background"><img alt="Bournemouth Big Wheel" sizes="[object Object]" src="/images/about-c2bc148dbe96be8bd4c62af4ba2cc44f.png" title /></div>
+                    <div className="background"><img alt="vBournemouth Big Wheel" sizes="[object Object]" src="/images/about-c2bc148dbe96be8bd4c62af4ba2cc44f.png" title /></div>
                     <div className="container px-0">
                         <div className="row no-gutters justify-content-start align-items-end align-content-end content">
                             <div className="col-12 col-sm-12">
