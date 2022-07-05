@@ -6398,7 +6398,7 @@ function Profile() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "background",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-            alt: "Bournemouth Big Wheel",
+            alt: "tes commit Bournemouth Big Wheel",
             sizes: "[object Object]",
             src: "/images/about-c2bc148dbe96be8bd4c62af4ba2cc44f.png",
             title: true
